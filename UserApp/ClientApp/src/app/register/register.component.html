@@ -1,0 +1,29 @@
+<div class="container">
+    <ng-container *ngIf="!otpSent && !validUser; else otpContainer">
+    <div class="sec-container">
+    <input [(ngModel)]="user.MobileNumber" class="get-input text-input" placeholder="Phone" type="tel">
+    <button (click)="sendOtp()" class="btn btn-primary button-press">Get OTP</button>
+    </div>
+    </ng-container>
+    <ng-template #otpContainer>
+    <div class="sec-container" *ngIf="!validUser">
+    <input [(ngModel)]="otp" class="get-input text-input">
+    <button (click)="verifyOtp()" class="btn btn-primary button-press">Sign In</button>
+    </div>
+    </ng-template>
+    <div id="sign-in-button"></div>
+    
+    <ng-container *ngIf="validUser && !showGreetingsDiv">
+        <div class="sec-container"> Set password
+        <input [(ngModel)]="user.Password" class="get-input text-input" placeholder="Password" type="password">
+        <button (click)="savePassword(user)" class="btn btn-primary button-press">Save</button>
+        </div>
+    </ng-container>
+
+    <div *ngIf = "showGreetingsDiv">
+        <app-welcome [validUser] = "valid"></app-welcome>
+    </div>
+</div>
+
+
+

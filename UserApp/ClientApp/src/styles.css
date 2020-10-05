@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.wrapper {
+  text-align: center;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 80vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn{
+  margin: 0 1% !important;
+  vertical-align: baseline !important;
+}
